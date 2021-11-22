@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Python课程设计</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <link href="static/img/favicon.png" rel="icon">
+    <link href="static/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="static/vendor/aos/aos.css" rel="stylesheet">
+    <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="static/css/style.css" rel="stylesheet">
+    <title>查询结果</title>
+</head>
+<body>
+<h2>图书修改</h2>
+<form action="/update" method="post">
+    <lable>图书编号</lable>
+    <input type="text" readonly  name="id" id="id" value="{{ data[0] }}"/>
+    <lable>书名</lable>
+    <input type="text" name="books" id="books" value="{{ data[2] }}"/>
+    <lable>作者</lable>
+    <input type="text" name="name" id="name" value="{{ data[1] }}"/>
+    <lable>价格</lable>
+    <input type="text" name="price" id="price" value="{{ data[3] }}"/>
+    <button type="submit" class="btn btn-outline-success">修改</button>
+</form>
+<script src="static/vendor/aos/aos.js"></script>
+<script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="static/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="static/vendor/php-email-form/validate.js"></script>
+<script src="static/vendor/purecounter/purecounter.js"></script>
+<script src="static/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="static/vendor/typed.js/typed.min.js"></script>
+<script src="static/vendor/waypoints/noframework.waypoints.js"></script>
+<script src="static/js/main.js"></script>
+<script src="../static/jquery-3.4.1.js"></script>
+</body>
+</html>

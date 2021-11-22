@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Python课程设计</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <link href="static/img/favicon.png" rel="icon">
+    <link href="static/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="static/vendor/aos/aos.css" rel="stylesheet">
+    <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="static/css/style.css" rel="stylesheet">
+    <title>查询结果</title>
+</head>
+<body>
+<h2>查询成功</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>id</th>
+        <th>书名</th>
+        <th>作者</th>
+        <th>价格</th>
+        {% for i in sdata %}
+            <tr>
+                <td>{{ i[0] }}</td>
+                <td>{{ i[2] }}</td>
+                <td>{{ i[1] }}</td>
+                <td>{{ i[3] }}</td>
+            </tr>
+        {% endfor %}
+</table>
+<table>
+    <th>操作
+        <button type="button" class="btn btn-outline-warning"><a href="/">返回</a></button>
+    </th>
+
+</table>
+<script src="static/vendor/aos/aos.js"></script>
+<script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="static/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="static/vendor/php-email-form/validate.js"></script>
+<script src="static/vendor/purecounter/purecounter.js"></script>
+<script src="static/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="static/vendor/typed.js/typed.min.js"></script>
+<script src="static/vendor/waypoints/noframework.waypoints.js"></script>
+<script src="static/js/main.js"></script>
+<script src="../static/jquery-3.4.1.js"></script>
+</body>
+</html>
