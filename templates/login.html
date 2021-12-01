@@ -1,0 +1,79 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>数据库课程设计</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <link href="static/img/favicon.png" rel="icon">
+    <link href="static/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="static/vendor/aos/aos.css" rel="stylesheet">
+    <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="static/css/style.css" rel="stylesheet">
+    <title>查询结果</title>
+</head>
+    <style>
+        #cont {
+            text-align: center;
+            padding: 20px;
+        }
+        body{
+            background: url(/static/img/pixel-jeff-clipa-s.gif) no-repeat center center fixed;
+            background-size: 100%;
+        }
+        #d{
+            margin-left: 30px;
+            margin-top:80px;
+        }
+    </style>
+</head>
+<body>
+<div id="cont" style="margin-top: 140px ">
+    <form method="post" action="/">
+        <div style="margin-top: 30px">
+            <label style="color:red;">
+                用户名：
+                <input type="text" name="user">
+            </label>
+        </div>
+        <div style="margin-top: 30px">
+            <label style="color:red;">
+                &nbsp;密码：&nbsp; &nbsp;<input type="password" name="password">
+            </label>
+        </div>
+        <div id="d">
+            <input  class="btn btn-success" type="submit" value="登录">
+            &nbsp; &nbsp;&nbsp; &nbsp;
+            <input class="btn btn-warning" type="reset" value="清空">
+        </div>
+    </form>
+</div>
+{% if data==0 %}
+    <script>
+        alert("账号或密码错误,请重新输入。。。")
+    </script>
+{% endif %}
+{#<script>#}
+{#    function resetForm() {#}
+        {#document.forms[0].reset();#}
+{#    }#}
+
+</script>
+<script src="static/vendor/aos/aos.js"></script>
+<script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="static/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="static/vendor/php-email-form/validate.js"></script>
+<script src="static/vendor/purecounter/purecounter.js"></script>
+<script src="static/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="static/vendor/typed.js/typed.min.js"></script>
+<script src="static/vendor/waypoints/noframework.waypoints.js"></script>
+<script src="static/js/main.js"></script>
+<script src="../static/jquery-3.4.1.js"></script>
+</body>
+</html>

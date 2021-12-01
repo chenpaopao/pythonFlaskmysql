@@ -33,12 +33,28 @@ def getdata(sql):
 
 
 # 设置网址的路由
-@app.route('/')
+@app.route('/index')
 def hello_world():
     # 执行userlist函数将返回值赋给data
     data = userlist()
     # 使用render_template渲染index.html并传入数据data到前端
     return render_template("index.html", data=data)
+
+
+# 设置网址的路由
+@app.route('/', methods=["post", "get"])
+def login():
+    if request.method == "POST":
+        user = request.form.get('user')
+        password = request.form.get('password')
+        sql = 'select * from user where user ="{}" AND pwd="{}"'.format(user, password)
+        b = cur.execute(sql)
+        if b == 1:
+            return redirect('/index')
+        else:
+            return render_template("login.html", data=0)
+    else:
+        return render_template("login.html", data=1)
 
 
 # 定义一个函数 使用sql语句查询anthors表的所有数据
@@ -74,8 +90,8 @@ def add():
             cur.execute(sql, [id, name, books, price])
             # 提交该事务
             con.commit()
-            # 重定向路由为  /
-            return redirect('/')
+            # 重定向路由为
+            return redirect('/index')
 
 
 # 根据id进行删除
@@ -87,17 +103,33 @@ def dele():
     sql = "delete from authors where id=" + id
     cur.execute(sql)
     con.commit()
-    return redirect('/')
-
+    return redirect('/index')
 
 # 根据id进行查找
 @app.route('/sele', methods=["post", "get"])
 def sele():
     id = request.form.get("sele")
     sql = "select * from authors where id=" + id
-    cur.execute(sql)
+    b = cur.execute(sql)
     sdata = cur.fetchall()
-    return render_template("select.html", sdata=sdata)
+    if b == 1:
+        return render_template("select.html", sdata=sdata)
+    else:
+        return render_template("select.html", d=0)
+
+
+# 根据名称进行查找
+@app.route('/sele1', methods=["post", "get"])
+def sele1():
+    name = request.form.get("name")
+    sql = 'select * from authors where books like "%{}%"'.format(name)
+    b = cur.execute(sql)
+    sdata = cur.fetchall()
+    print(b)
+    if b == 1:
+        return render_template("select.html", sdata=sdata)
+    else:
+        return render_template("select.html", d=0)
 
 
 # # 根据id进行修改
@@ -123,7 +155,7 @@ def update():
     sql = 'update authors set name="{}",books="{}",price="{}" where id="{}"'.format(name, books, price, id)
     cur.execute(sql)
     con.commit()
-    return redirect('/')
+    return redirect('/index')
 
 
 # 主函数执行

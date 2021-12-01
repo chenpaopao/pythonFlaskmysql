@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Python课程设计</title>
+    <title>数据库课程设计</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
     <link href="static/img/favicon.png" rel="icon">
@@ -19,28 +19,36 @@
     <title>查询结果</title>
 </head>
 <body>
-<h2>查询成功</h2>
-<table class="table table-bordered">
-    <tr>
-        <th>id</th>
-        <th>书名</th>
-        <th>作者</th>
-        <th>价格</th>
-        {% for i in sdata %}
-            <tr>
-                <td>{{ i[0] }}</td>
-                <td>{{ i[2] }}</td>
-                <td>{{ i[1] }}</td>
-                <td>{{ i[3] }}</td>
-            </tr>
-        {% endfor %}
-</table>
-<table>
-    <th>操作
-        <button type="button" class="btn btn-outline-warning"><a href="/">返回</a></button>
-    </th>
-
-</table>
+<style>
+    #cont {
+        text-align: center;
+        padding: 20px;
+    }
+</style>
+<a href="/index"><img src="../static/img/re.png"width="50px"height="50px"></a>
+<div id="cont">
+    <h2>查询成功</h2>
+    <table class="table table-bordered">
+        <tr>
+            <th>id</th>
+            <th>书名</th>
+            <th>作者</th>
+            <th>价格</th>
+            {% for i in sdata %}
+                <tr>
+                    <td>{{ i[0] }}</td>
+                    <td>{{ i[2] }}</td>
+                    <td>{{ i[1] }}</td>
+                    <td>{{ i[3] }}</td>
+                </tr>
+            {% endfor %}
+    </table>
+</div>
+{% if d==0 %}
+    <script>
+        alert("暂无此图书，请检查编号或图书名。。。")
+    </script>
+{% endif %}
 <script src="static/vendor/aos/aos.js"></script>
 <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="static/vendor/glightbox/js/glightbox.min.js"></script>

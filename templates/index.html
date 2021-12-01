@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>python课程设计</title>
+    <title>数据库课程设计</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
     <link href="static/img/favicon.png" rel="icon">
@@ -28,7 +28,7 @@
 </header>
 <section id="hero" class="d-flex flex-column justify-content-center">
     <div class="container" data-aos="zoom-in" data-aos-delay="100">
-        <h1>Python课程设计</h1>
+        <h1>数据库课程设计</h1>
         <p>I'm <span class="typed" data-typed-items="20智能物联陈胜源"></span></p>
     </div>
 </section>
@@ -36,7 +36,7 @@
     <section id="about" class="about">
         <div class="container" data-aos="fade-up">
             <div class="section-title">
-                <h2>书库查询</h2>
+                <h2>图书查询</h2>
                 {#      设置执行动作和请求方式       #}
                 <form action="/add" method="post">
                     <lable>编号:</lable>
@@ -49,11 +49,25 @@
                     <input name="price" required="required" type="text" class="price-input" id="jg">
                     <button type="submit" id="add-button" class="btn btn-outline-success">添加</button>
                 </form>
-                <form action="/sele" method="post">
-                    <lable>查询图书:</lable>
-                    <input name="sele" required="required" type="text" class="price-input" id="cx" placeholder="请输入图书编号">
-                    <button type="submit" id="add-button" class="btn btn-outline-success">查询</button>
-                </form>
+
+         <table style="margin-left: 250px">
+            <tr>
+                <td>
+                    <form action="/sele" method="post">
+                        <lable>根据编号查询:</lable>
+                        <input name="sele" required="required" type="text" class="price-input" id="cx" placeholder="请输入图书编号">
+                        <button type="submit" id="add-button" class="btn btn-outline-success">查询</button>
+                    </form>
+                </td>
+                <td>
+                    <form action="/sele1" method="post">
+                        <lable>根据名称查询:</lable>
+                        <input name="name" required="required" type="text" class="price-input" id="name" placeholder="请输入图书名称">
+                        <button type="submit" id="add-button" class="btn btn-outline-success">查询</button>
+                    </form>
+                </td>
+            </tr>
+         </table>
                 <table class="table table-bordered">
                     <tr>
                         <th>图书编号</th>
@@ -103,6 +117,7 @@
 <script>
     function dele(id) {
         location.href = '/dele?id=' + id
+        {#alert("删除成功。。。")#}
     }
     function updata(id) {
         location.href = '/updata?id=' + id
